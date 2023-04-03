@@ -87,15 +87,15 @@ torchvision                   0.14.1
 llama.cpp$ make --version | head -1
 GNU Make 4.3
 
-$ md5sum ./models/65B/ggml-model-q4_0.bin
-dbdd682cce80e2d6e93cefc7449df487  ./models/65B/ggml-model-q4_0.bin
+$ md5sum ../data/llama/65B/ggml-model-q4_0.bin
+dbdd682cce80e2d6e93cefc7449df487  ../data/llama/65B/ggml-model-q4_0.bin
 ```
 
 Example run with the Linux command [perf](https://www.brendangregg.com/perf.html)
 ```
-llama.cpp$ perf stat ./main -m ./models/65B/ggml-model-q4_0.bin -t 16 -n 1024 -p "Please close your issue when it has been answered."
+llama.cpp$ perf stat ./main -m ../data/llama/65B/ggml-model-q4_0.bin -t 16 -n 1024 -p "Please close your issue when it has been answered."
 main: seed = 1679149377
-llama_model_load: loading model from './models/65B/ggml-model-q4_0.bin' - please wait ...
+llama_model_load: loading model from '../data/llama/65B/ggml-model-q4_0.bin' - please wait ...
 llama_model_load: n_vocab = 32000
 llama_model_load: n_ctx   = 512
 llama_model_load: n_embd  = 8192
@@ -108,28 +108,28 @@ llama_model_load: n_ff    = 22016
 llama_model_load: n_parts = 8
 llama_model_load: ggml ctx size = 41477.73 MB
 llama_model_load: memory_size =  2560.00 MB, n_mem = 40960
-llama_model_load: loading model part 1/8 from './models/65B/ggml-model-q4_0.bin'
+llama_model_load: loading model part 1/8 from '../data/llama/65B/ggml-model-q4_0.bin'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
-llama_model_load: loading model part 2/8 from './models/65B/ggml-model-q4_0.bin.1'
+llama_model_load: loading model part 2/8 from '../data/llama/65B/ggml-model-q4_0.bin.1'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
-llama_model_load: loading model part 3/8 from './models/65B/ggml-model-q4_0.bin.2'
+llama_model_load: loading model part 3/8 from '../data/llama/65B/ggml-model-q4_0.bin.2'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
-llama_model_load: loading model part 4/8 from './models/65B/ggml-model-q4_0.bin.3'
+llama_model_load: loading model part 4/8 from '../data/llama/65B/ggml-model-q4_0.bin.3'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
-llama_model_load: loading model part 5/8 from './models/65B/ggml-model-q4_0.bin.4'
+llama_model_load: loading model part 5/8 from '../data/llama/65B/ggml-model-q4_0.bin.4'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
-llama_model_load: loading model part 6/8 from './models/65B/ggml-model-q4_0.bin.5'
+llama_model_load: loading model part 6/8 from '../data/llama/65B/ggml-model-q4_0.bin.5'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
-llama_model_load: loading model part 7/8 from './models/65B/ggml-model-q4_0.bin.6'
+llama_model_load: loading model part 7/8 from '../data/llama/65B/ggml-model-q4_0.bin.6'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
-llama_model_load: loading model part 8/8 from './models/65B/ggml-model-q4_0.bin.7'
+llama_model_load: loading model part 8/8 from '../data/llama/65B/ggml-model-q4_0.bin.7'
 llama_model_load: .......................................................................................... done
 llama_model_load: model size =  4869.09 MB / num tensors = 723
 
@@ -164,7 +164,7 @@ main:   sample time =   168.62 ms
 main:  predict time = 223895.61 ms / 888.47 ms per token
 main:    total time = 246406.42 ms
 
- Performance counter stats for './main -m ./models/65B/ggml-model-q4_0.bin -t 16 -n 1024 -p Please close your issue when it has been answered.':
+ Performance counter stats for './main -m ../data/llama/65B/ggml-model-q4_0.bin -t 16 -n 1024 -p Please close your issue when it has been answered.':
 
         3636882.89 msec task-clock                #   14.677 CPUs utilized          
              13509      context-switches          #    3.714 /sec                   

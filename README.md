@@ -48,7 +48,7 @@ Supported models:
 Here is a typical run using LLaMA-7B:
 
 ```java
-make -j && ./main -m ./models/7B/ggml-model-q4_0.bin -p "Building a website can be done in 10 simple steps:" -n 512
+make -j && ./main -m ../data/llama/7B/ggml-model-q4_0.bin -p "Building a website can be done in 10 simple steps:" -n 512
 I llama.cpp build info:
 I UNAME_S:  Darwin
 I UNAME_P:  arm
@@ -61,7 +61,7 @@ I CXX:      Apple clang version 14.0.0 (clang-1400.0.29.202)
 
 make: Nothing to be done for `default'.
 main: seed = 1678486056
-llama_model_load: loading model from './models/7B/ggml-model-q4_0.bin' - please wait ...
+llama_model_load: loading model from '../data/llama/7B/ggml-model-q4_0.bin' - please wait ...
 llama_model_load: n_vocab = 32000
 llama_model_load: n_ctx   = 512
 llama_model_load: n_embd  = 4096
@@ -156,10 +156,10 @@ python3 -m pip install torch numpy sentencepiece
 python3 convert-pth-to-ggml.py models/7B/ 1
 
 # quantize the model to 4-bits (using method 2 = q4_0)
-./quantize ./models/7B/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin 2
+./quantize ../data/llama/7B/ggml-model-f16.bin ../data/llama/7B/ggml-model-q4_0.bin 2
 
 # run the inference
-./main -m ./models/7B/ggml-model-q4_0.bin -n 128
+./main -m ../data/llama/7B/ggml-model-q4_0.bin -n 128
 ```
 
 Currently, it's best to use Python 3.9 or Python 3.10, as `sentencepiece` has not yet published a wheel for Python 3.11.
@@ -193,7 +193,7 @@ Here is an example few-shot interaction, invoked with the command
 ./examples/chat-13B.sh
 
 # custom arguments using 13B model
-./main -m ./models/13B/ggml-model-q4_0.bin -n 256 --repeat_penalty 1.0 --color -i -r "User:" -f prompts/chat-with-bob.txt
+./main -m ../data/llama/13B/ggml-model-q4_0.bin -n 256 --repeat_penalty 1.0 --color -i -r "User:" -f prompts/chat-with-bob.txt
 ```
 
 Note the use of `--color` to distinguish between user input and generated text.
@@ -235,7 +235,7 @@ cadaver, cauliflower, cabbage (vegetable), catalpa (tree) and Cailleach.
 - You have to convert it to the new format using [./convert-gpt4all-to-ggml.py](./convert-gpt4all-to-ggml.py):
 
   ```bash
-  python3 convert-gpt4all-to-ggml.py models/gpt4all-7B/gpt4all-lora-quantized.bin ./models/tokenizer.model 
+  python3 convert-gpt4all-to-ggml.py models/gpt4all-7B/gpt4all-lora-quantized.bin ../data/llama/tokenizer.model 
   ```
   
 - You can now use the newly generated `gpt4all-lora-quantized.bin` model in exactly the same way as all other models

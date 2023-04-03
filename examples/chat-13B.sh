@@ -2,7 +2,7 @@
 
 cd "$(dirname "$0")/.." || exit
 
-MODEL="${MODEL:-./models/13B/ggml-model-q4_0.bin}"
+MODEL="${MODEL:-../data/llama/13B/ggml-model-q4_0.bin}"
 USER_NAME="${USER_NAME:-User}"
 AI_NAME="${AI_NAME:-ChatLLaMa}"
 

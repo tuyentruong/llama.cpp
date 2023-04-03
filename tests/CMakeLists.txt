@@ -7,4 +7,4 @@ endfunction()
 
 # llama_add_test(test-double-float.c) # SLOW
 llama_add_test(test-quantize.c)
-llama_add_test(test-tokenizer-0.cpp ${CMAKE_CURRENT_SOURCE_DIR}/../models/ggml-vocab.bin)
+llama_add_test(test-tokenizer-0.cpp ${CMAKE_CURRENT_SOURCE_DIR}/.../data/llama/ggml-vocab.bin)
