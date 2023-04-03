@@ -1721,12 +1721,12 @@ int llama_tokenize(
                         bool   add_bos) {
     auto res = llama_tokenize(ctx->vocab, text, add_bos);
 
-    if (n_max_tokens < (int) res.size()) {
-        fprintf(stderr, "%s: too many tokens\n", __func__);
-        return -((int) res.size());
-    }
-
-    for (size_t i = 0; i < res.size(); i++) {
+    //if (n_max_tokens < (int) res.size()) {
+    //    fprintf(stderr, "%s: too many tokens\n", __func__);
+    //    return -((int) res.size());
+    //}
+    size_t n_tokens = std::min(n_max_tokens, (int) res.size()); // stop at n_max_tokens
+    for (size_t i = 0; i < n_tokens; i++) {
         tokens[i] = res[i];
     }
 
