@@ -33,3 +33,10 @@ compile_commands.json
 .venv
 __pycache__
 .swiftpm
+
+/examples
+/tests
+
+*.vcxproj
+*.vcxproj.filters
+*.sln
