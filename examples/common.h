@@ -40,6 +40,7 @@ struct gpt_params {
     bool random_prompt     = false; // do not randomize prompt if none provided
     bool use_color         = false; // use color to distinguish generations and inputs
     bool interactive       = false; // interactive mode
+    bool stream            = false; // stream mode
 
     bool embedding         = false; // get only sentence embedding
     bool interactive_start = false; // wait for user input immediately
